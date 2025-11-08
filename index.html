@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OFERTA ÚNICA: Manejo de Elite. O guia completo para blindar sua criação com infraestrutura, higiene e rotinas de alto nível. Conteúdo 100% baseado no e-book.">
+    <meta name="theme-color" content="#ff6b35">
+    <title>OFERTA ÚNICA: Manejo de Elite - Blindagem da Criação</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Playfair+Display:wght=700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* ============================================
+           RESET E VARIÁVEIS GLOBAIS
+           ============================================ */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .price-title {
+            /* Cor Vermelho Forte */
+            color: #FF0000;
+            /* Tamanho e Peso para destaque */
+            font-size: 3.5em;
+            font-weight: 900;
+            /* Sombra Preta Mediana */
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+            /* Centralizar, se necessário */
+            text-align: center;
+            /* Margem para separação */
+            margin: 20px 0;
+        }
+
+        :root {
+            --primary-color: #ff6b35;
+            --secondary-color: #004e89;
+            --accent-color: #f7931e;
+            --success-color: #27ae60;
+            --danger-color: #e74c3c;
+            --dark-bg: #1a1a1a;
+            --light-bg: #f8f9fa;
+            --text-dark: #2c3e50;
+            --text-light: #ffffff;
+            --border-color: #e0e0e0;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            --shadow-heavy: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.8;
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+            overflow-x: hidden;
+        }
+
+        /* ============================================
+           HEADER COM URGÊNCIA
+           ============================================ */
+
+        .header {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #003d6b 100%);
+            color: var(--text-light);
+            padding: 15px 0;
+            box-shadow: var(--shadow-heavy);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            color: var(--accent-color);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .timer-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 107, 53, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 107, 53, 0.4);
+        }
+
+        .timer-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .timer {
+            display: flex;
+            gap: 6px;
+            font-weight: 800;
+            font-size: 13px;
+        }
+
+        .time-unit {
+            background: rgba(255, 107, 53, 0.3);
+            padding: 4px 8px;
+            border-radius: 4px;
+            min-width: 28px;
+            text-align: center;
+        }
+
+        /* ============================================
+           HERO SECTION COM IMPACTO
+           ============================================ */
+
+        .hero {
+            position: relative;
+            min-height: 500px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+            .hero::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
+                pointer-events: none;
+            }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .upsell-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-color), #ff9500);
+            color: var(--dark-bg);
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(247, 147, 30, 0.3);
+        }
+
+        .urgency-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--danger-color), #c0392b);
+            color: var(--text-light);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-left: 10px;
+            animation: pulse-danger 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse-danger {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(36px, 8vw, 56px);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+            .hero-title .highlight {
+                color: var(--primary-color);
+                display: block;
+                text-shadow: 0 2px 10px rgba(255, 107, 53, 0.2);
+            }
+
+        .hero-subtitle {
+            font-size: clamp(16px, 4vw, 20px);
+            color: #d0d0d0;
+            margin-bottom: 35px;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .cta-primary-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        /* ============================================
+           CONTAINER
+           ============================================ */
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ============================================
+           SEÇÃO DE COMPLEMENTARIDADE
+           ============================================ */
+
+        .complementarity-section {
+            padding: 80px 20px;
+            background: var(--light-bg);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(28px, 6vw, 42px);
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--secondary-color);
+            line-height: 1.2;
+        }
+
+        .complementarity-box {
+            background: var(--text-light);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-heavy);
+            border-left: 6px solid var(--success-color);
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+        }
+
+            .complementarity-box:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            }
+
+            .complementarity-box h3 {
+                font-family: 'Playfair Display', serif;
+                font-size: 28px;
+                color: var(--secondary-color);
+                margin-bottom: 18px;
+                font-weight: 900;
+                line-height: 1.3;
+            }
+
+            .complementarity-box p {
+                font-size: 16px;
+                color: #555;
+                margin-bottom: 16px;
+                line-height: 1.8;
+            }
+
+            .complementarity-box strong {
+                color: var(--primary-color);
+                font-weight: 700;
+            }
+
+            .complementarity-box em {
+                color: var(--danger-color);
+                font-style: italic;
+                font-weight: 600;
+            }
+
+        /* ============================================
+           SEÇÃO DE BENEFÍCIOS
+           ============================================ */
+
+        .benefits-section {
+            padding: 80px 20px;
+            background: var(--text-light);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.05), rgba(247, 147, 30, 0.05));
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+            .benefit-card:hover {
+                transform: translateY(-5px);
+                box-shadow: var(--shadow-heavy);
+                border-left-color: var(--accent-color);
+            }
+
+        .benefit-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: var(--secondary-color);
+            margin-bottom: 12px;
+            font-weight: 900;
+        }
+
+        .benefit-card p {
+            font-size: 15px;
+            color: #666;
+        }
+
+        /* ============================================
+           SEÇÃO DE ESCASSEZ/PRIORIDADE
+           ============================================ */
+
+        .scarcity-section {
+            padding: 60px 20px;
+            background: var(--secondary-color);
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        .scarcity-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(24px, 5vw, 36px);
+            font-weight: 900;
+            margin-bottom: 30px;
+            color: var(--accent-color);
+        }
+
+        .scarcity-item {
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+            text-align: left;
+        }
+
+            .scarcity-item h4 {
+                font-size: 18px;
+                font-weight: 700;
+                margin-bottom: 10px;
+                color: var(--primary-color);
+            }
+
+            .scarcity-item p {
+                font-size: 16px;
+                line-height: 1.6;
+                color: #f0f0f0;
+            }
+
+        /* ============================================
+           CTA FINAL
+           ============================================ */
+
+        .cta-final-section {
+            padding: 60px 20px;
+            background: var(--light-bg);
+            text-align: center;
+        }
+
+        .cta-final-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(28px, 6vw, 42px);
+            font-weight: 900;
+            margin-bottom: 30px;
+            color: var(--danger-color);
+        }
+
+        .loss-aversion {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-top: 20px;
+        }
+
+        /* ============================================
+           BOTÕES
+           ============================================ */
+
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            color: var(--text-light);
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+            animation: pulse-cta 2s infinite;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.6);
+            transform: translateY(-2px);
+        }
+
+        @keyframes pulse-cta {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 15px rgba(255, 107, 53, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 107, 53, 0);
+            }
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            color: #888;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: 1px solid #ccc;
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        .btn-secondary:hover {
+            color: var(--danger-color);
+            border-color: var(--danger-color);
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+
+        .footer {
+            background: var(--dark-bg);
+            color: #aaa;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+
+        /* ============================================
+           IMAGENS DO E-BOOK (Adicionado)
+           ============================================ */
+        .ebook-content-image {
+            width: 100%;
+            max-width: 300px; /* Tamanho máximo para "pequenas fotos" */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            display: block;
+            border: 3px solid var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .ebook-content-image:hover {
+            transform: scale(1.03);
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        /* ============================================
+           RESPONSIVIDADE
+           ============================================ */
+
+        @media (max-width: 768px) {
+            .header-content {
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 60px 20px;
+            }
+
+            .complementarity-section, .benefits-section, .scarcity-section, .cta-final-section {
+                padding: 40px 20px;
+            }
+
+            .complementarity-box {
+                padding: 30px;
+            }
+
+            .btn-primary {
+                padding: 15px 30px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER COM URGÊNCIA -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">GALOS MURA BRASIL</div>
+            <div class="timer-badge">
+                <span class="timer-label">OFERTA EXPIRA EM:</span>
+                <div class="timer" id="timer">
+                    <span class="time-unit" id="hours">24</span>:<span class="time-unit" id="minutes">00</span>:<span class="time-unit" id="seconds">00</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION COM IMPACTO -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="upsell-badge">OFERTA EXCLUSIVA DE UPSELL <span class="urgency-badge">ÚLTIMA CHANCE</span></span>
+            <h1 class="hero-title">
+                PARE TUDO! Esta é a Sua ÚNICA Chance de Acessar o <span class="highlight">MANEJO DE ELITE</span> e Blindar Sua Criação.
+            </h1>
+            <p class="hero-subtitle">
+                Você acaba de garantir o conhecimento essencial. Agora, dê o passo definitivo para a **PRODUTIVIDADE MÁXIMA** e **PREVENÇÃO DE PERDAS** que só o manejo de alto nível pode oferecer.
+            </p>
+            <div class="cta-primary-section">
+                <a href="#cta-final" class="btn-primary">SIM, QUERO BLINDAR MINHA CRIAÇÃO AGORA!</a>
+                <p class="loss-aversion" style="color: #ffcccc; font-weight: 700;">Se você sair desta página, esta oferta será perdida para sempre.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE COMPLEMENTARIDADE (O que você VAI encontrar) -->
+    <section class="complementarity-section">
+        <div class="container">
+            <h2 class="section-title">
+                O SEGREDO NÃO ESTÁ SÓ NO TRATAMENTO, MAS NA **PREVENÇÃO**.
+                <br>você vai ser mestre com o "Manejo de Elite":
+            </h2>
+
+            <!-- Bloco 1: Infraestrutura -->
+            <div class="complementarity-box">
+                <h3>1. Infraestrutura que Multiplica a Saúde</h3>
+                <p>O galinheiro não é apenas um abrigo; é o alicerce da sua produtividade. Você aprenderá a projetar a **Infraestrutura de Elite** com foco em:</p>
+                <ul>
+                    <li><strong>Localização e Orientação:</strong> Como evitar umidade e estresse térmico.</li>
+                    <li><strong>Ventilação:</strong> Crucial para remover gases nocivos e excesso de umidade.</li>
+                    <li><strong>Espaço Ideal:</strong> O dimensionamento vital para o bem-estar.</li>
+                    <li><strong>Poleiros e Ninhos:</strong> Altura, formato e a proporção dos ninhos para garantir ovos limpos e conforto.</li>
+                </ul>
+                <div class="image-container">
+                    <img src="page_4_img_1.jpeg" alt="Exemplo de poleiros em níveis conforme o Manejo de Elite" class="ebook-content-image">
+                </div>
+            </div>
+
+            <!-- Bloco 2: Higiene e Biosseguridade -->
+            <div class="complementarity-box">
+                <h3>2. A Rotina de Higiene que Elimina Riscos</h3>
+                <p>A higiene rigorosa é a primeira linha de defesa. O e-book detalha o passo a passo da **Higiene e Biosseguridade** que você deve aplicar:</p>
+                <ul>
+                    <li><strong>Limpeza do Galinheiro:</strong> Frequência (Diária, Semanal, Mensal) e o método de limpeza profunda com produtos específicos.</li>
+                    <li><strong>Uso da Cal Virgem:</strong> A dica de elite para secar e elevar o pH do piso, inibindo patógenos.</li>
+                    <li><strong>Higiene da Água:</strong> Limpeza diária de bebedouros para remover o biofilme. A importância dos <strong>Bebedouros Niple</strong> para a economia de medicamentos.</li>
+                    <li><strong>Comedouros:</strong> Como garantir que a ração nunca fique úmida por mais de 6 horas.</li>
+                </ul>
+                <div class="image-container">
+                    <img src="page_9_img_1.png" alt="Ilustração de Bebedouros Niple, recomendados no Manejo de Elite" class="ebook-content-image">
+                </div>
+            </div>
+
+            <!-- Bloco 3: Estratégia de Alimentação e Rotina Diária -->
+            <div class="complementarity-box">
+                <h3>3. Estratégia de Alimentação e Rotina Diária de Elite</h3>
+                <p>A excelência é construída na consistência. Você terá acesso às estratégias exatas para:</p>
+                <ul>
+                    <li><strong>Alimentação de Poedeiras:</strong> Foco em cálcio e a frequência ideal para otimizar a formação da casca do ovo.</li>
+                    <li><strong>Alimentação de Engorda:</strong> Como maximizar o ganho de peso com arraçoamento frequente.</li>
+                    <li><strong>Rotina Diária:</strong> O cronograma exato (Manhã, Início da Tarde, Final da Tarde) Pra nao passar nada despercebido.</li>
+                    <li><strong>Observação:</strong> Aprenda a identificar sinais de alerta antes que o problema se espalhe.</li>
+                </ul>
+                <div class="image-container">
+                    <img src="page_14_table.png" alt="Tabela de Rotina Diária de Elite do e-book" class="ebook-content-image">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE ESCASSEZ/PRIORIDADE -->
+    <section class="scarcity-section">
+        <div class="container">
+            <h2>POR QUE ESTE CONHECIMENTO É URGENTE E SÓ APARECE AGORA?</h2>
+
+            <div class="scarcity-item">
+                <h4>PRIORIDADE: O Complemento Perfeito</h4>
+                <p>Você já tem o guia de tratamento. Mas o <strong>Manejo de Elite</strong> é o que te faz **parar de apagar incêndios** e começar a **PREVENIR** que eles aconteçam. É a diferença entre reagir e dominar. Sem este manejo, o tratamento é apenas um paliativo temporário.</p>
+            </div>
+
+            <div class="scarcity-item">
+                <h4>URGÊNCIA: Cada Dia é um Risco</h4>
+                <p>O e-book detalha a <strong>Rotina Diária de Elite</strong> e o que <strong>Observar Diariamente</strong> (Comportamento, Consumo, Fezes). Cada dia sem aplicar esta rotina é um dia de risco desnecessário, potencial perda de lucro e estresse para suas aves. O conhecimento está pronto para ser aplicado HOJE.</p>
+            </div>
+
+            <div class="scarcity-item">
+                <h4>ESCASSEZ: Oferta Única de Upsell</h4>
+                <p>Esta é uma oferta de <strong>UPSell</strong>. Ela foi liberada <strong>APENAS</strong> para você, neste exato momento, como um complemento de valor inestimável à sua compra principal. Se você sair desta página, <strong>NÃO HAVERÁ OUTRA CHANCE</strong> de adquirir o "Manejo de Elite" por este preço e com acesso imediato. É agora ou nunca.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final-section" id="cta-final">
+        <div class="container">
+            <h2>NÃO DEIXE PARA DEPOIS O QUE PODE SALVAR SUA CRIAÇÃO.</h2>
+            <a href="#" class="btn-primary">SIM, QUERO O MANEJO DE ELITE E BLINDAR MINHA CRIAÇÃO!</a>
+            <p class="loss-aversion">Se você fechar esta página, você perde o acesso a este guia para sempre.</p>
+            <p class="loss-aversion"></p>
+        </div>
+        <h1 class="hero-title">
+            POR APENAS
+        </h1>
+        <h1 class="price-title">
+            <strong>R$ 54,90</strong>
+        </h1>
+        <h1 class="hero-title">
+            Esta é a Sua ÚNICA Chance de Acessar o <span class="highlight">MANEJO DE ELITE</span> e Blindar Sua Criação.
+        </h1>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2025 GALOS MURA BRASIL. Todos os direitos reservados.</p>
+        <p>Esta é uma oferta exclusiva e única para clientes VIP.</p>
+    </footer>
+
+    <script>
+        // Script de Urgência (Timer de 24 horas)
+        function startTimer(duration) {
+            let timer = duration;
+            const hoursDisplay = document.getElementById('hours');
+            const minutesDisplay = document.getElementById('minutes');
+            const secondsDisplay = document.getElementById('seconds');
+
+            const interval = setInterval(function () {
+                // Calcula horas, minutos e segundos
+                const hours = parseInt(timer / 3600, 10);
+                const minutes = parseInt((timer % 3600) / 60, 10);
+                const seconds = parseInt(timer % 60, 10);
+
+                // Formata com zero à esquerda
+                hoursDisplay.textContent = hours < 10 ? "0" + hours : hours;
+                minutesDisplay.textContent = minutes < 10 ? "0" + minutes : minutes;
+                secondsDisplay.textContent = seconds < 10 ? "0" + seconds : seconds;
+
+                if (--timer < 0) {
+                    clearInterval(interval);
+                    // Ação ao expirar o tempo
+                    document.getElementById('timer').innerHTML = '<span style="color: var(--danger-color);">EXPIRADA</span>';
+                    document.querySelector('.btn-primary').style.pointerEvents = 'none';
+                    document.querySelector('.btn-primary').style.opacity = '0.5';
+                    document.querySelector('.loss-aversion').textContent = 'A oferta exclusiva expirou. Você perdeu esta chance.';
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            // 24 horas em segundos (24 * 60 * 60)
+            const twentyFourHours = 86400;
+            startTimer(twentyFourHours);
+        };
+    </script>
+
+</body>
+</html>
